@@ -1,0 +1,15 @@
+{
+    "APP":"CustomVP",
+    "IP":"127.0.0.1",
+    "PORT":80,
+    "TRANSCODE_SERVERS":["http://127.0.0.1:81"],
+    "AUTH_SERVER": "http://127.0.0.1:8081",
+    "AUTH_API_KEY": "12345678",
+    "FILE_SERVERS":["http://127.0.0.1:8080"],
+    "VIRTUAL_IPS":{
+        "tc0":"http://127.0.0.1:81",
+        "fs0": "http://127.0.0.1:8080"
+    },
+    "LOAD_BALANCE_TYPE":"ROUND_ROBIN",
+    "FILE_SERVER_RAID":"NONE"
+}
