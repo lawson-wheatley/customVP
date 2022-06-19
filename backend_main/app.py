@@ -1,12 +1,10 @@
 from re import L
-from ssl import VERIFY_X509_STRICT
-from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
 from models import db
-from flask import Flask, request, jsonify, make_response, g, send_from_directory
+from flask import Flask, request, jsonify
 from flask_migrate import Migrate
-from flask_restful import Resource, wraps
+from flask_restful import wraps
 from flask_cors import CORS
-import hashlib, os, uuid, json
+import os, json
 from functools import wraps
 import requests
 
@@ -88,7 +86,7 @@ genres = ["Romantic Comedy", "Comedy", "Drama", "Action", "Fantasy", "Thriller",
 def home(id):
     recently_watched = [title_to_json(watched_until_to_title(watch)) for watch in watchedUntil.query.filter(watchedUntil.usr == id).order_by(watchedUntil.lastWatched.desc()).paginate(0, 20, False)]
     return jsonify({"Recently Watched":recently_watched}), 200
-    
+
 
 """
 HELPERS

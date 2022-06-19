@@ -1,7 +1,7 @@
-from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity, unset_jwt_cookies, jwt_required, JWTManager
-from flask import Flask, request, jsonify, make_response, g, send_from_directory
+from flask_jwt_extended import create_access_token,get_jwt,get_jwt_identity, jwt_required
+from flask import Flask, request, jsonify
 from datetime import datetime, timedelta, timezone
-import hashlib, os, uuid, json
+import hashlib, os, json
 
 api = Flask(__name__)
 api.config["JWT_SECRET_KEY"] = "adfs0a9sdf9aklm"
@@ -26,11 +26,9 @@ def login():
     
 @api.route("/register", methods = ["POST"])
 def register():
-    dob = request.json.get("dob", None)
     username = request.json.get("username", None)
     email = request.json.get("email", None).lower()
     password = request.json.get("password", None)
-    
     user = User.query.filter(User.email == email).first()
     if user:
         return jsonify({"message":"Email already in use"}), 400
@@ -39,6 +37,17 @@ def register():
     db.session.add(user)
     db.session.commit()
     return create_token(email, password)
+
+@api.route("/createsubuser", methods = ["POST"])
+@jwt_required()
+def createuser():
+    if request.json.get("APIKEY", None) == API_KEY:
+        usr = get_jwt_identity()
+        sub = SubUser(hasPin = request.json.get("hasPin", False), pin = request.json.get("pin", None), usr = usr, access = request.json.get("access"))
+        db.session.add(sub)
+        usr.subUsers.insert(sub)
+        db.session.commit()
+        return jsonify ({"Message":"SubUser Created"}), 200
 
 @api.route("/verify/user", methods = ["POST"])
 @jwt_required()
