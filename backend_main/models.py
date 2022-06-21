@@ -16,6 +16,7 @@ tags = db.Table('tags',
 class Title(db.Model):
     __tablename__ = "title"
     id = db.Column(Integer, primary_key = True)
+    name = db.Column(String, nullable = False)
     isSeries = db.Column(Boolean, nullable = False)
     Videos = db.relationship("video")
     desciption = db.Column(String, nullable = True)

@@ -1,0 +1,145 @@
+.bodya{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(127,71,152);
+    background: linear-gradient(56deg, rgba(127,71,152,1) 0%, rgba(9,9,121,1) 100%);
+}
+.bodyb{
+    width: 100vw;
+    height: 100vh;
+    transition: 2s;
+    background: rgb(127,71,152) !important;
+    background: linear-gradient(150deg, rgba(127,71,152,1) 0%, rgba(9,9,121,1) 100%) !important;
+}
+.center-container{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.vertical{
+    flex-direction:column;
+    height: 100vh;
+}
+.horizontal{
+    gap: 10px;
+    flex-direction:row;
+}
+.subuser{
+    color: white;
+    font-size: 25pt;
+    font-weight:400;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align:center;
+    width: 150px;
+    height: 150px;
+    border: 6px solid orange;
+    border-radius: 80px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.whoswatch{
+    color: white;
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+}
+.va{
+
+}
+.subuser:hover{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align:center;
+    font-size: 30pt;
+    width: 180px;
+    height: 180px;
+    border: 6px solid orange;
+    border-radius: 200px;
+    transition: 0.5s;
+}
+.allowBig{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 200px;
+    height: 240px;
+}
+.alb{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    height: 240px;
+}
+.login{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align:center;
+    width: 150px;
+    height: 150px;
+    border: 6px solid orange;
+    border-radius: 200px;
+    background-color: transparent;
+    transition: 0.5s;
+}
+.login:hover{
+    transition: 0.5s;
+    width: 180px;
+    height: 180px;
+    border-radius: 200px;
+}
+.loginclicked{
+    box-sizing: border-box;
+    padding: 50px;
+    background-color: #222222;
+    transition: 1s;
+    width: 400px;
+    height: 600px;
+    border: none;
+    border-radius: 0px;
+}
+.login div.loginform{
+    display: none;
+}
+.loginclicked div.loginform{
+    display: block;
+}
+.loginclicked div.word{
+    display: none;
+}
+.word{
+    text-align: center;
+    color: white;
+}
+.lower{
+    color: white;
+    transform: translate(0px, 100px);
+}
+.lf{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.lf .textinput{
+    outline: none;
+    padding: 5px;
+    border-radius: none;
+    border: none;
+    border-bottom: 1px solid #aaaaaa;
+    background-color: transparent;
+    color: #aaaaaa;
+}
+.lf .buttoninput{
+    padding: 5px;
+    text-align: center;
+    color: #aaaaaa;
+    background-color: #666666;
+    border: none;
+    border-radius: 20px;
+}

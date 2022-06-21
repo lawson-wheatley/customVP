@@ -52,7 +52,7 @@ def sub_user_verification_required(func):
 
 @api.route("/login", methods = ["POST", "GET"])
 def login():
-    return requests.post(f"{conf['AUTH_SERVER']}",  json={"id":request.json.get("email", None), "password":request.json.get("password", None), "APIKEY":conf["AUTH_API_KEY"]})
+    return requests.post(f"{conf['AUTH_SERVER']}/login",  json={"id":request.json.get("email", None), "password":request.json.get("password", None), "APIKEY":conf["AUTH_API_KEY"]})
 
 @api.route("/register", methods=["POST","GET"])
 def register():
@@ -79,6 +79,19 @@ def get_subs(id):
     subs = User.query.filter(User.id == id).first().subUsers
     return jsonify([subUser_to_json(sub) for sub in subs])
 
+@api.route("/submitvideo", methods = ["POST"])
+def submitfile():
+    if request.json.get("APIKEY", None) == conf["MAIN_API_KEY"]:
+        title = Title.query.filter(Title.name == request.json.get("titlename", None)).first()
+        if not title:
+            titledetails = request.json.get('titledetails', None)
+            title = Title(name = titledetails["name"], access = titledetails["access"], isSeries = titledetails["isSeries"], picLocation = titledetails["piclocation"], rating=titledetails["rating"], description = titledetails["description"])
+            db.session.commit(title)
+        vid = Video(access = title.access, title = request.json.get('title'), description = request.json.get("description"), flocation = request.json.get("flocation"), watches = 0, overarch = title.id)
+        db.session.commit(vid)
+        title.Videos.insert(vid)
+        return 200
+    return 401
 
 genres = ["Romantic Comedy", "Comedy", "Drama", "Action", "Fantasy", "Thriller", "Horror"]
 @api.route("/home", methods=["GET"])

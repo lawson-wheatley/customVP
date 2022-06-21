@@ -17,8 +17,10 @@ from models import User, SubUser
 @api.route("/login", methods = ["POST"])
 def login():
     user = request.json.get("id", None)
+    password = request.json.get("password", None)
     key = request.json.get("APIKEY", None)
-    if key == API_KEY:
+    usr = User.query.filter(User.email == user).first()
+    if usr and key == API_KEY and (usr.password == checkPass(password, usr.salt)):
         access_token = create_access_token(identity = id)
         response = jsonify(access_token=access_token)
         return response
