@@ -2,9 +2,10 @@
     width: 100vw;
     height: 100vh;
     background: rgb(127,71,152);
-    background: linear-gradient(135deg, #42275a  0%, #734b6d 100%);
+    background: linear-gradient(135deg, #FC5C7D  0%, #6A82FB 100%);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-bottom: 100px;
 }
 .center-container{
     width: 100vw;
@@ -187,10 +188,22 @@
     flex-direction:row;
     justify-content:space-between;
 }
-.navbar:hover{
+
+.searchnavbar{
+    position:fixed;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    box-sizing: border-box;
+    height: 65px;
+    background-color: transparent;
+    width: 100vw;
     transition: 0.25s;
-    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction:row;
+    justify-content:space-between;
 }
+
 .sidebaritem{
     height: 20px;
     background-color: transparent;
@@ -402,7 +415,7 @@
 .movie:hover{
     transition: 0.25s;
     transform:translateY(-100px);
-    box-shadow: 3px 3px 3px #222222;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     z-index: 50;
     width: 350px;
     height: 350px;
@@ -447,6 +460,159 @@
     height: 15px;
 }
 .videoplayer{
+    position: absolute;
+    top:0;
+    left: 0;
     height: 100vh;
     width: 100vw;
+}
+.searchbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    border-radius: 4px;
+    transform: translateY(-5px);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 25px;
+    background-color: transparent;
+    width: 40vw;
+    transition: 0.25s;
+}
+.searchbar:hover{
+    transition: 0.25s;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.searchbar input.searchbarinput{
+    color: transparent;
+    border: none;
+    padding: none;
+    margin: none;
+    outline: none;
+    background: transparent;
+    font-size: medium;
+    color: white;
+    width: 100%;
+}
+.searchbar ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    transition: 0.25s;
+    color: white;
+    opacity: 0; /* Firefox */
+  }
+.searchbar:hover ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    transition: 0.25s;
+    color: white;
+    opacity: 0.6; /* Firefox */
+  }
+
+  .controlsContainer {
+    width: 100vw;
+    position: fixed;
+    bottom: 20px;
+    background-color: transparent;
+    padding: 0 5vw;
+    z-index: 20;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content:left;
+    position: fixed;
+    bottom: 2vh;
+    left: 4vh;
+    gap: 5vw;
+    z-index: 25;
+  }
+  .player{
+      width: 100vw;
+      height: 100vh;
+      background: black;
+      position: fixed;
+      top: 0;
+      left: 0;
+  }
+  .movietitle{
+      padding: 5px;
+      color: white;
+      font-size: medium;
+  }
+  .controlsIcon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .controlsIconc {
+    height: 40px;
+    cursor: pointer;
+  }
+  .controlsIcon--small {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+  }
+  
+  /* The time controls section */
+  
+  .timecontrols {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    bottom: 50px; 
+    width: 100%;
+    z-index: 25;
+  }
+  
+  .time_progressbarContainer {
+    background-color: gray;
+    border-radius: 15px;
+    width: 90%;
+    height: 5px;
+    z-index: 30;
+    position: relative;
+    margin: 0 20px;
+  }
+  
+  .time_progressBar {
+    border-radius: 15px;
+    background-color: #FC5C7D;
+    height: 100%;
+  }
+  
+  .controlsTime {
+    color: white;
+  }
+  .hideplayer{
+      width: 100vw;
+      height: 100vh;
+      z-index: 20;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+  }
+  .getscobottom{
+      width: 100vw;
+      height: 20vh;
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      z-index: 20;
+      background: black;
+      background: linear-gradient(0deg, rgba(0,0,0,1)  0%,rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
+  }
+
+  .getscotop{
+      padding-left: 2.5vw;
+      padding-top: 2.5vh;
+    width: 100vw;
+    height: 20vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 20;
+    background: black;
+    background: linear-gradient(180deg, rgba(0,0,0,1)  0%,rgba(0,0,0,0.1) 80%, rgba(0,0,0,0) 100%);
 }

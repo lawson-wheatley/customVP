@@ -13,6 +13,9 @@ export default function Movie(item) {
                     <div className="moviebuttons">
                         <button className="moviebutton" onClick={e=> play()}><img className="moviepos" src="/img/play.svg"></img></button>
                         </div>
+                    <div className="movietitle">
+                        {item.title}
+                    </div>
                 </div>
             </div>
 

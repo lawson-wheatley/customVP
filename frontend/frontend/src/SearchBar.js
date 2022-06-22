@@ -1,6 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 export default function SearchBar() {
-
+    const navigate = useNavigate();
     function toggleSidebar(bool){
         console.log("HA");
         if(bool){
@@ -14,7 +15,7 @@ export default function SearchBar() {
     function nav(){
         navigate("/browse");
     }
-    return (<div className="navbar">
+    return (<div className="searchnavbar">
         <div className="leftnav">
             <div className="leftsidebarOpener"><button className="sidebaropen" onClick={e => toggleSidebar(true)}><img src="/img/sidebaropen.svg" className="sidebaritem"></img></button>
                 <div id="sidebar" className="sidebar" style={{display: "none"}}>
@@ -49,7 +50,7 @@ export default function SearchBar() {
                     </div>
                 </div>
             </div>
-            <div className="searchbar"><button className="sidebaropen" onClick={e => nav()}><img src="/img/search.svg" className="sidebaritem"></img></button><input type="text" placeholder="What are you looking for?"></input></div>
+            <div className="searchbar"><button className="sidebaropen" onClick={e => nav()}><img src="/img/exit.svg" className="sidebaritem"></img></button><input type="text" className="searchbarinput" placeholder="What are you looking for?"></input></div>
         </div>
         <div className="profnav"><div className="circ"></div>User 1</div>
         </div>

@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 import Carousel from "./Carousel";
 export default function Browse() {
+
     return (<div>
         <Nav />
         <div className="titlemovie"></div>

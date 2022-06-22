@@ -1,5 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 export default function Nav() {
+    let navigate = useNavigate();
+
     function toggleSidebar(bool){
         console.log("HA");
         if(bool){
@@ -45,7 +48,7 @@ export default function Nav() {
                     </div>
                 </div>
             </div>
-            <div className="search"><button className="sidebaropen"><img src="/img/search.svg" className="sidebaritem"></img></button></div>
+            <div className="search"><button className="sidebaropen" onClick={e => navigate("/search")}><img src="/img/search.svg" className="sidebaritem" ></img></button></div>
         </div>
         <div className="midnav"><img className="sidebaritem" src = "/img/logo.svg"></img></div>
         <div className="profnav"><div className="circ"></div>User 1</div>
