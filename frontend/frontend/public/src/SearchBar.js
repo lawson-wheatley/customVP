@@ -1,7 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-export default function Nav() {
-    let navigate = useNavigate();
+export default function SearchBar() {
 
     function toggleSidebar(bool){
         console.log("HA");
@@ -12,6 +10,9 @@ export default function Nav() {
             document.getElementById("sidebar").style.display = "none";
             document.getElementById("body").style.overflowY = "scroll";
         }
+    }
+    function nav(){
+        navigate("/browse");
     }
     return (<div className="navbar">
         <div className="leftnav">
@@ -48,9 +49,8 @@ export default function Nav() {
                     </div>
                 </div>
             </div>
-            <div className="search"><button className="sidebaropen" onClick={e => navigate("/search")}><img src="/img/search.svg" className="sidebaritem" ></img></button></div>
+            <div className="searchbar"><button className="sidebaropen" onClick={e => nav()}><img src="/img/search.svg" className="sidebaritem"></img></button><input type="text" placeholder="What are you looking for?"></input></div>
         </div>
-        <div className="midnav"><img className="sidebaritem" src = "/img/logo.svg"></img></div>
         <div className="profnav"><div className="circ"></div>User 1</div>
         </div>
     );

@@ -1,10 +1,9 @@
 import React from "react";
-import Nav from "./Nav";
 import Carousel from "./Carousel";
-export default function Browse() {
-
+import SearchBar from "./SearchBar";
+export default function Search() {
     return (<div>
-        <Nav />
+        <SearchBar />
         <div className="titlemovie"></div>
         <div className="carousels">
         <div id="continue-watching" className="genre">
