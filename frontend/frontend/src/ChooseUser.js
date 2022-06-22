@@ -10,25 +10,25 @@ export default function SubUserSelect() {
             <div className="center-container horizontal">
                 <div className = "allowBig">
                     <div className = "alb">
-                        <div id="subuser" className="subuser">
+                    <a id="subuser" className="subuser" href="/browse">
                             U
-                        </div>
+                        </a>
                         <div className="word">User1</div>
                     </div>
                 </div>
                 <div className = "allowBig">
                     <div className = "alb">
-                        <div id="subuser" className="subuser">
+                    <a id="subuser" className="subuser" href="/browse">
                             U
-                        </div>
+                        </a>
                         <div className="word">User2</div>
                     </div>
                 </div>
                 <div className = "allowBig">
                     <div className = "alb">
-                        <div id="subuser" className="subuser">
+                        <a id="subuser" className="subuser" href="/browse">
                             U
-                        </div>
+                        </a>
                         <div className="word">User3</div>
                     </div>
                 </div>
