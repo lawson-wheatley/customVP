@@ -238,11 +238,11 @@
     flex-direction: row;
 }
 .sidebaroverarch{
-    z-index: 20;
+    z-index: 40;
     background-color: rgba(0, 0, 0, 0.4);
     width: 100vw;
     height: 100vh;
-    position:fixed;
+    position: absolute;
     top: 0;
     left: 0;
     animation: bgcolor 0.5s forwards;
@@ -260,11 +260,14 @@
 
 
 .sidebarselector{
+    position: fixed;
+    top: 0;
+    left: 0;
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
     overflow-y: scroll;
-    z-index: 25;
+    z-index: 40;
     background-color: #111111;
     display: flex;
     flex-direction: column;
@@ -322,21 +325,29 @@
     height:75vh;
 }
 .carousel{
+    scroll-behavior: smooth;
+    padding-left: 500px;
+    overflow-x:hidden;
+    overflow-y:hidden;
     width: calc(100% - 60px);
     padding-left: 5px;
     padding-right: 5px;
-    height: 150px;
     display: flex;
     flex-direction: row;
     justify-content: left;
     gap: 10px;
-    margin: 0;
+}
+.page{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 10px;
 }
 .bigCarousel:hover .leftCarouselButton{
     border-radius: 5px;
     transition: 0.25s;
     float: left;
-    height: 150px;
+    height: 12vw;
     width: 30px;
     background-color: rgba(0, 0, 0, 0.4);
     border: none;
@@ -349,7 +360,7 @@
     border-radius: 5px;
     transition: 0.25s;
     float: right;
-    height: 150px;
+    height: 12vw;
     width: 30px;
     background-color: rgba(0, 0, 0, 0.4);
     border: none;
@@ -362,7 +373,7 @@
 .bigCarousel .leftCarouselButton{
     transition: 0.25s;
     float: left;
-    height: 150px;
+    height: 12vw;
     width: 30px;
     background-color: rgba(0, 0, 0, 0.0);
     border: none;
@@ -374,7 +385,7 @@
 .bigCarousel .rightCarouselButton{
     transition: 0.25s;
     float: right;
-    height: 150px;
+    height: 12vw;
     width: 30px;
     background-color: rgba(0, 0, 0, 0.0);
     border: none;
@@ -399,38 +410,44 @@
     color: white;
     padding-left: 40px;
 }
-.movieholder{
-    width: 250px;
-    border-radius: 10px;
-    height: 150px;
+.genre{
+    height: 14vw;
+    padding-bottom: 2vw;
 }
 .movie{
+    z-index: 30;
+    top: 0;
+    left: 0;
     background-color:#222222;
     transition: 0.125s;
-    width: 250px;
-    height: 150px;
+    width: 20vw;
+    height: 12vw;
     border-radius: 10px;
 
 }
 .movie:hover{
+    position: relative;
+    z-index: 30;
+    overflow: visible;
     transition: 0.25s;
-    transform:translateY(-100px);
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
     z-index: 50;
-    width: 350px;
-    height: 350px;
+    top: 0;
+    left: 0;
+    width: 20vw;
+    height: 12vw;
     border-radius: 5px;
 }
 .movie .thumbnail{
     transition: 0.125s;
-    width: 250px;
-    height: 150px;
+    width: 20vw;
+    height: 12vw;
     border-radius: 10px;
 }
 .movie:hover .thumbnail{
     transition: 0.25s;
-    width: 350px;
-    height: 200px;
+    width: 20vw;
+    height: 12vw;
     border-radius: 10px 10px 0px 0px;
 }
 .movie .moviebottom{
@@ -438,9 +455,17 @@
 }
 
 .movie:hover .moviebottom{
+    border-radius: 0.2vw;
+    box-shadow: 0px 0px 4px #222222;
+    position: absolute;
+    width: 20.5vw;
+    height: 5.5vw;
+    transform: translate(-0.25vw, -6.5vw);
     display: block;
     padding: 10px;
     box-sizing: border-box;
+    background: rgb(127,71,152);
+    background: linear-gradient(135deg, #FC5C7D  0%, #6A82FB 100%);
     animation: custom 0.5s forward;
 }
 .moviebuttons{

@@ -9,11 +9,11 @@ export default function Browse() {
         <div className="carousels">
         <div id="continue-watching" className="genre">
             <div className="genretext">Continue Watching</div>
-            <Carousel from="/get/continue"/>
+            <Carousel name="continue" from="/get/continue"/>
         </div>
         <div id="horror" className="genre">
             <div className="genretext">Horror</div>
-            <Carousel from="/get/horror"/>
+            <Carousel name="horror" from="/get/horror"/>
         </div>
         </div>
         </div>
